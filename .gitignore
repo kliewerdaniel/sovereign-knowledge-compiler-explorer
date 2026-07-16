@@ -1,0 +1,63 @@
+# Sovereign Knowledge Compiler Explorer
+
+## Operating System / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.iml
+
+## Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+## Node / Frontend (future implementation phase — not yet used)
+node_modules/
+dist/
+build/
+.next/
+.out/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+## Generated Artifacts (compiler output — to be produced in implementation phase)
+/generated/
+/output/
+/dist/
+/artifacts/
+*.generated.*
+
+## Environment / Secrets
+.env
+.env.*
+*.local
+secrets.json
+credentials.json
+
+## Local Models / Embeddings / Large Build Artifacts
+*.bin
+*.gguf
+*.onnx
+embeddings/
+chroma_db/
+*.sqlite
+*.db
+
+## Documentation Scratch / Drafts (keep final docs only)
+/drafts/
+
+## OS / misc
+*.log
+.cache/
+.tmp/
