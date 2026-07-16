@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getConceptStore, getMisconceptions, sourceHref, sourceLabel } from "@/lib/curriculum.server";
+import { getConceptStore, getMisconceptions, sourceHref, sourceLabel } from "../../../lib/curriculum.server";
 
 export async function generateStaticParams() {
   const store = await getConceptStore();

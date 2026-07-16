@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getConceptStore } from "@/lib/curriculum.server";
+import { getConceptStore } from "../lib/curriculum.server";
 
 const ROOT = "sovereign-knowledge-compiler";
 

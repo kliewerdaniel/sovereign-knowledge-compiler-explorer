@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getStats } from "@/lib/curriculum.server";
+import { getStats } from "../../lib/curriculum.server";
 
 export default async function AboutPage() {
   const stats = await getStats();

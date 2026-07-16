@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getLearningPaths, getConceptStore } from "@/lib/curriculum.server";
+import { getLearningPaths, getConceptStore } from "../../lib/curriculum.server";
 
 export default async function PathsPage() {
   const paths = await getLearningPaths();

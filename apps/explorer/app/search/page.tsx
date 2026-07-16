@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getSearchIndex, getConceptStore } from "@/lib/curriculum";
+import { getSearchIndex, getConceptStore } from "../../lib/curriculum";
 
 export default function SearchClient() {
   const [q, setQ] = useState("");

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getConceptViews, getConceptStore } from "@/lib/curriculum";
+import { getConceptViews, getConceptStore } from "../../lib/curriculum";
 
 const KIND_COLORS: Record<string, string> = {
   architecture: "#818cf8",
