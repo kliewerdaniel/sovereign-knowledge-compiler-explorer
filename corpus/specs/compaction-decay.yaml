@@ -1,0 +1,15 @@
+id: compaction-decay
+title: Compaction and Decay
+kind: concept
+abstraction_level: 3
+tags: [memory, decay, crdt]
+what_is_it: A reversible overlay that lets old, unused compiled facts fade (archive) so memory stays sharp, while never silently dropping anything — revive/purge are explicit.
+why_exists: Compiled memory should not be append-only forever; usage (reinforcement), not age alone, should drive what stays. Decay is a CRDT operation so devices converge.
+where_appears: ["sovereign-knowledge-compiler sync/compaction.py"]
+prerequisites: [crdt-sync, probability]
+dependencies: []
+related_concepts: [crdt-sync, cognitive-memory, conflict-ledger]
+mathematical_foundations: [probability]
+historical_evolution: "Relevance = reinforcement_weight*ln(1+reinforcements) - age_weight*(age/half_life) - stale_weight*(since_touch/stale_after)."
+implementation_details: "CompactionPolicy scores relevance; archived facts leave live_facts() but stay in the CRDT and archive ledger."
+source_references: ["source:src/sovereign_knowledge_compiler/sync/compaction.py"]

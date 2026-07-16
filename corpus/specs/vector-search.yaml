@@ -1,0 +1,15 @@
+id: vector-search
+title: Vector Search
+kind: concept
+abstraction_level: 2
+tags: [vector-search, retrieval]
+what_is_it: Retrieval that ranks items by vector similarity (typically approximate nearest neighbor) rather than keyword match.
+why_exists: Embeddings make vector search the natural retrieval primitive for semantic queries; it underpins RAG and clustering.
+where_appears: ["SKCE foundation for rag, embeddings, clustering"]
+prerequisites: [embeddings, cosine-similarity]
+dependencies: []
+related_concepts: [embeddings, cosine-similarity, information-retrieval, clustering]
+mathematical_foundations: [linear-algebra, algorithms]
+historical_evolution: "ANN indexes (HNSW, IVF) made billion-scale vector search practical."
+implementation_details: "SKCE's explorer does NOT do live vector search; the curriculum's search is a pre-built inverted index (compile-time, not runtime)."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

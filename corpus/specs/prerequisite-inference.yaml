@@ -1,0 +1,15 @@
+id: prerequisite-inference
+title: Prerequisite Inference
+kind: pass
+abstraction_level: 2
+tags: [pass, prerequisites, pedagogy]
+what_is_it: The pass that produces the prerequisite DAG — edges declaring what a reader must understand before a concept — making recursive descent possible.
+why_exists: Without prerequisite edges, descent dead-ends. This pass is the pedagogically load-bearing step; deterministic fallback (declared + ontology + structural) guarantees a working DAG even with no model.
+where_appears: ["compiler/passes/pass-05-prerequisite-infer", "SKCE prerequisite graph view"]
+prerequisites: [compiler-passes, graph-algorithms]
+dependencies: [intermediate-representation]
+related_concepts: [curriculum-graph, concept-node, relationship-edge]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: "Deterministic fallback first (in v1); local-model inference is an additive enrichment that grounds edges with token-overlap citations."
+implementation_details: "pass-05 seeds declared prerequisites, ontology parent->child edges, then (if model) proposes edges with rationale + citation."
+source_references: ["source:compiler/passes/pass-05-prerequisite-infer/run.py", "docs/CURRICULUM_GRAPH.md"]

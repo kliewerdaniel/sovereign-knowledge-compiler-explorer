@@ -1,0 +1,15 @@
+id: compiler-passes
+title: Compiler Passes
+kind: pass
+abstraction_level: 1
+tags: [compiler-design, passes, pipeline]
+what_is_it: A compiler pass is a single, declarative transformation over the intermediate representation. Passes declare what they consume and produce, their dependencies, and whether they need a model. The scheduler runs them in topological order.
+why_exists: Breaking compilation into ordered, dependency-declared passes keeps the compiler extensible (add a pass = add a directory), auditable (each artifact knows its producing pass), and reproducible (model/temperature pinned in pass.yaml).
+where_appears: ["Knowledge Compiler SDK pass registry", "SKCE pass-0X-* directories"]
+prerequisites: [intermediate-representation, compiler-theory]
+dependencies: [plugin-architecture]
+related_concepts: [intermediate-representation, knowledge-graphs, prerequisite-inference]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: From the original 9-phase Knowledge Compiler pipeline (parsing, analysis, graph, embedding, clustering, optimization, generation) to the SKCE pass-01..09 curriculum pipeline.
+implementation_details: Each pass is pass.yaml + run.py; the orchestrator (passes_framework.py) topologically sorts via Kahn's algorithm and runs deterministic passes always, model passes when a local client is available.
+source_references: ["source:src/sovereign_knowledge_compiler/compiler/synthesizer.py", "source:compiler/passes_framework.py"]

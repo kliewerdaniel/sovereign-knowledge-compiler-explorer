@@ -1,0 +1,15 @@
+id: probability
+title: Probability
+kind: math
+abstraction_level: 2
+tags: [probability, math]
+what_is_it: The mathematics of uncertainty — events, random variables, distributions, and how likely outcomes are.
+why_exists: Confidence scores, reinforcement counts, and decay policies in SKC are probabilistic; understanding them requires probability basics.
+where_appears: ["SKCE confidence fields", "CRDT reinforcement, compaction relevance scoring"]
+prerequisites: []
+dependencies: []
+related_concepts: [statistics, information-theory, linear-algebra]
+mathematical_foundations: []
+historical_evolution: "From Kolmogorov's axioms (1933) to modern Bayesian reasoning in ML."
+implementation_details: "SKCE confidence in [0,1] is a probability; compaction relevance uses log(1+reinforcements)."
+source_references: ["source:src/sovereign_knowledge_compiler/sync/compaction.py"]

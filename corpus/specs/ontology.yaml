@@ -1,0 +1,15 @@
+id: ontology
+title: Ontology
+kind: concept
+abstraction_level: 2
+tags: [ontology, taxonomy]
+what_is_it: The controlled vocabulary that classifies every ConceptNode (kind, facets) and every relationship type — giving the curriculum structure beyond free-form linking.
+why_exists: A fixed enum keeps a 150+ concept graph coherent, enables mechanical passes (rank by abstraction, seed parent->child edges), and makes foundations explicit.
+where_appears: ["compiler/ONTOLOGY.md", "SKCE ontology graph view"]
+prerequisites: [knowledge-graphs]
+dependencies: []
+related_concepts: [knowledge-graphs, concept-node, curriculum-graph]
+mathematical_foundations: [type-theory]
+historical_evolution: "Ontology refinement (pass-06c) maps extracted concepts to kinds and flags misfits for human review."
+implementation_details: "CONCEPT_KINDS (architecture|pass|ir|artifact|math|cs|concept|decision|pattern|limitation) + EDGE_TYPES enums in ir.py."
+source_references: ["source:compiler/ir.py", "docs/ONTOLOGY.md"]

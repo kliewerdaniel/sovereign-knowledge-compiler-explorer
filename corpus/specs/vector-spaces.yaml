@@ -1,0 +1,15 @@
+id: vector-spaces
+title: Vector Spaces
+kind: math
+abstraction_level: 2
+tags: [linear-algebra, math]
+what_is_it: A set of vectors closed under addition and scalar multiplication, with notions of basis, dimension, and norm.
+why_exists: Embeddings are points in a high-dimensional vector space; distance and angle there encode semantic relations.
+where_appears: ["SKCE foundation for embeddings and vector-search"]
+prerequisites: [linear-algebra]
+dependencies: []
+related_concepts: [embeddings, cosine-similarity, linear-algebra]
+mathematical_foundations: [linear-algebra]
+historical_evolution: "Hilbert spaces formalized infinite-dimensional analogs; the setting for all embedding geometry."
+implementation_details: "Embedding dimension (1536 in upstream OpenAI, 256 after random-projection reduction)."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

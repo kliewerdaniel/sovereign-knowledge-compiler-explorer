@@ -1,0 +1,14 @@
+id: pass-05-prerequisite-infer
+name: Prerequisite Inference
+phase: 5
+deterministic: false
+requires_model: true
+model:
+  default: llama3.1
+  temperature: 0.2
+consumes: [ConceptNode, RelationshipEdge]
+produces: [RelationshipEdge, FoundationLink]
+depends_on: [pass-03-extract-concepts, pass-04-linking]
+honesty:
+  fail_loud: false
+  record_provenance: true

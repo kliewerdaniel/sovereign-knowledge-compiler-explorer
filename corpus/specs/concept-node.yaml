@@ -1,0 +1,15 @@
+id: concept-node
+title: Concept Node
+kind: ir
+abstraction_level: 2
+tags: [ir, concept]
+what_is_it: The atomic unit of the SKCE curriculum — a ConceptNode carries a full self-description contract (what/why/where/prerequisites/foundations/sources) so the app can recursively explain it.
+why_exists: Recursive self-explanation requires every concept to know its own prerequisites and foundations. The ConceptNode is the data structure that makes descent possible.
+where_appears: ["compiler/ir.py", "Every /concept/[id] page"]
+prerequisites: [intermediate-representation]
+dependencies: []
+related_concepts: [intermediate-representation, relationship-edge, pedagogical-model]
+mathematical_foundations: [type-theory]
+historical_evolution: "Generalizes the upstream Fact/Decision dataclasses into a pedagogically complete node."
+implementation_details: "ir.py ConceptNode: id, kind, contract (ConceptContract), prerequisite_ids, foundation_links, source_refs."
+source_references: ["source:compiler/ir.py", "docs/PEDAGOGICAL_MODEL.md"]

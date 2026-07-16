@@ -1,0 +1,15 @@
+id: distributed-systems
+title: Distributed Systems
+kind: cs
+abstraction_level: 2
+tags: [distributed-systems, cs]
+what_is_it: The field studying how independent nodes coordinate to act as one system — replication, consensus, fault tolerance, and convergence.
+why_exists: CRDT sync is a distributed-systems problem; replicating compiled memory across devices without a server requires convergence guarantees.
+where_appears: ["SKCE foundation for crdt-sync"]
+prerequisites: [algorithms]
+dependencies: []
+related_concepts: [crdt-sync, conflict-ledger]
+mathematical_foundations: [algorithms, probability]
+historical_evolution: "From Lamport clocks (1978) to CRDTs (Shapiro 2011); the theory behind server-less convergence."
+implementation_details: "SKCE sync uses a Lamport clock for causal LWW and a Remove-Wins Set for deletion."
+source_references: ["source:src/sovereign_knowledge_compiler/sync/crdt.py"]

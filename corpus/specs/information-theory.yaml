@@ -1,0 +1,15 @@
+id: information-theory
+title: Information Theory
+kind: math
+abstraction_level: 2
+tags: [information-theory, math]
+what_is_it: The mathematical study of information, entropy, and compression — how much can be encoded, and how surprising is an event.
+why_exists: TF-IDF, entropy-based pruning, and embedding information content all draw on information theory; it underlies why some terms are more informative than others.
+where_appears: ["SKCE foundation for embeddings, rag, vector-search"]
+prerequisites: [probability]
+dependencies: []
+related_concepts: [probability, embeddings, statistics]
+mathematical_foundations: [probability]
+historical_evolution: "Shannon (1948) defined entropy; the basis of coding, retrieval weighting, and compression."
+implementation_details: "Upstream KeywordExtractorPass uses smoothed IDF: log((N+1)/(df+1))+1."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

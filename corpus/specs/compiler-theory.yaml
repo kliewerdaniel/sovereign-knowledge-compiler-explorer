@@ -1,0 +1,15 @@
+id: compiler-theory
+title: Compiler Theory
+kind: cs
+abstraction_level: 2
+tags: [compiler-theory, cs]
+what_is_it: The study of how a compiler transforms source code through lexical analysis, parsing, intermediate representations, optimization passes, and code emission.
+why_exists: Compile-time AI is compiler theory applied to knowledge; understanding passes, IRs, and schedulers requires the underlying theory.
+where_appears: ["SKCE foundation for compiler-passes and intermediate-representation"]
+prerequisites: []
+dependencies: []
+related_concepts: [intermediate-representation, compiler-passes, software-compiler-analogy]
+mathematical_foundations: [algorithms, data-structures]
+historical_evolution: "From Aho/Sethi/Ullman 'Dragon Book' to modern MLIR multi-level IR."
+implementation_details: SKCE reuses Kahn's algorithm (topological sort) for pass scheduling, exactly as classic compilers order phases.
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture"]

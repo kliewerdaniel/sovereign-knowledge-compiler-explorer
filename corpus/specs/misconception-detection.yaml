@@ -1,0 +1,15 @@
+id: misconception-detection
+title: Misconception Detection
+kind: pass
+abstraction_level: 3
+tags: [pass, pedagogy, misconceptions]
+what_is_it: A model-assisted pass that proposes common misconceptions about a concept and their corrections, attached as MisconceptionNodes.
+why_exists: A concept is not understood until its common failures are named. Proactive correction compiled in beats a chatbot guessing at query time.
+where_appears: ["docs/COMPILER_PASSES.md (pass-06a)", "SKCE misconception callouts"]
+prerequisites: [compiler-passes, pedagogical-model]
+dependencies: []
+related_concepts: [pedagogical-model, concept-node, prerequisite-inference]
+mathematical_foundations: [probability]
+historical_evolution: "Listed as a future compiler direction in the project brief; implemented as a local-model enrichment pass."
+implementation_details: "Every MisconceptionNode carries confidence + source; human-review queue before publish; never presented as established fact."
+source_references: ["docs/COMPILER_PASSES.md", "docs/OPEN_RESEARCH_QUESTIONS.md"]

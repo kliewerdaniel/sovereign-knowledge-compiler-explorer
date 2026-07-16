@@ -1,0 +1,12 @@
+id: pass-04-linking
+name: Linking and Relationships
+phase: 4
+deterministic: true
+requires_model: false
+consumes: [ConceptNode]
+produces: [RelationshipEdge]
+depends_on: [pass-03-extract-concepts]
+optional_deps: [pass-05-prerequisite-infer]
+honesty:
+  fail_loud: true
+  record_provenance: true

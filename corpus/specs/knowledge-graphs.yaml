@@ -1,0 +1,15 @@
+id: knowledge-graphs
+title: Knowledge Graphs
+kind: concept
+abstraction_level: 2
+tags: [knowledge-graphs, graphrag]
+what_is_it: A knowledge graph represents entities as nodes and their relationships as typed edges, enabling multi-hop reasoning and community detection that flat vector search cannot.
+why_exists: Organizing documents into a graph lets a system answer "how do these concepts connect?" not just "which chunk is most similar?". It is the relational backbone of compiled knowledge.
+where_appears: ["Knowledge Compiler knowledge-graph builder pass", "SKCE concept graph view"]
+prerequisites: [graph-algorithms]
+dependencies: []
+related_concepts: [embeddings, vector-search, graphrag, ontology]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: From semantic networks and RDF to Microsoft GraphRAG (2024) demonstrating graph retrieval beats naive vector search on sensemaking queries.
+implementation_details: SKCE builds several graph views over one ConceptNode set — concept, prerequisite, decision, ontology, misconception (see KNOWLEDGE_GRAPH_MODEL).
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

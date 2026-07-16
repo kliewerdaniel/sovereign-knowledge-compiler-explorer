@@ -1,0 +1,15 @@
+id: rag
+title: Retrieval-Augmented Generation
+kind: concept
+abstraction_level: 2
+tags: [rag, llms, information-retrieval]
+what_is_it: RAG retrieves relevant context chunks for a query, assembles them into a prompt, and asks an LLM to generate an answer — fresh on every query.
+why_exists: RAG grounds LLM answers in external knowledge and reduces hallucination versus parametric-only generation. It is the dominant runtime-knowledge pattern SKCE contrasts itself against.
+where_appears: ["Contrasted in every SKC blog post", "The 'runtime tax' the compiler eliminates"]
+prerequisites: [information-retrieval, vector-search]
+dependencies: []
+related_concepts: [compile-time-ai, graphrag, embeddings]
+mathematical_foundations: [information-theory]
+historical_evolution: "Introduced 2020; became the default enterprise LLM pattern by 2023. SKCE argues it is structurally an interpreter — re-deriving meaning every query."
+implementation_details: SKCE's explorer does zero RAG at runtime; the compiled curriculum is the static alternative.
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

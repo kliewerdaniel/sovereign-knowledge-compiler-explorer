@@ -1,0 +1,11 @@
+id: pass-01-ingest
+name: Ingest
+phase: 1
+deterministic: true
+requires_model: false
+consumes: []
+produces: [SourceRecord]
+depends_on: []
+honesty:
+  fail_loud: true
+  record_provenance: true

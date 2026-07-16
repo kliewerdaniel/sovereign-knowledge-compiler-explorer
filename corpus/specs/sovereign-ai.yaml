@@ -1,0 +1,15 @@
+id: sovereign-ai
+title: Sovereign AI
+kind: concept
+abstraction_level: 1
+tags: [sovereign-ai, local-first, sovereignty]
+what_is_it: Sovereign AI is intelligence you own, running on infrastructure you control, making decisions from a knowledge substrate compiled from your own sources rather than rented from someone else's API.
+why_exists: It is the cross-cutting value that compile-time AI, local-first inference, and inspectable artifacts all share — the compiled artifact is portable and auditable in a way a black-box API call never is.
+where_appears: ["Sovereign AI book", "Every SKC design decision (local-only, immutable artifacts)"]
+prerequisites: [compile-time-ai, crdt-sync]
+dependencies: []
+related_concepts: [compile-time-ai, knowledge-compiler, sovereign-knowledge-compiler, cognitive-memory]
+mathematical_foundations: []
+historical_evolution: "Articulated across the Sovereign Intelligence Stack; the through-line of Daniel Kliewer's research."
+implementation_details: "SKCE enforces sovereignty structurally: local-only compilation, no cloud API, immutable content-hashed artifacts."
+source_references: ["blog:2026-07-14-recursive-research-compiler-knowledge-compiler-sdk"]

@@ -1,0 +1,11 @@
+id: pass-08-emit
+name: Artifact Emit
+phase: 8
+deterministic: true
+requires_model: false
+consumes: [ConceptNode, RelationshipEdge, LearningPathNode]
+produces: [ArtifactNode, manifest.json]
+depends_on: [pass-07-curriculum-optimize]
+honesty:
+  fail_loud: true
+  record_provenance: true

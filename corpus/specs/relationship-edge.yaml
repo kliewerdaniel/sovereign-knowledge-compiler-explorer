@@ -1,0 +1,15 @@
+id: relationship-edge
+title: Relationship Edge
+kind: ir
+abstraction_level: 2
+tags: [ir, graph]
+what_is_it: A typed connection between two ConceptNodes — related, prerequisite_of, depends_on, foundation_of, implements, contradicts, gap, and more.
+why_exists: Edges encode the structure the explorer navigates. Keeping raw weight (count) separate from confidence (model score) prevents the SDK's score>1.0 bug.
+where_appears: ["compiler/ir.py", "All graph views"]
+prerequisites: [intermediate-representation, concept-node, graph-algorithms]
+dependencies: []
+related_concepts: [concept-node, knowledge-graphs, prerequisite-inference]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: "Extends upstream knowledge-graph edges with explicit pedagogical + foundation types."
+implementation_details: "ir.py RelationshipEdge: source, target, type, weight (raw count, NOT confidence), confidence ([0,1]), rationale, source."
+source_references: ["source:compiler/ir.py", "docs/INTERMEDIATE_REPRESENTATION.md"]

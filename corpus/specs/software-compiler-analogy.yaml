@@ -1,0 +1,15 @@
+id: software-compiler-analogy
+title: Software Compiler Analogy
+kind: concept
+abstraction_level: 1
+tags: [compiler-theory, analogy]
+what_is_it: The mapping that justifies compile-time AI — a knowledge compiler is to Markdown what a software compiler is to source code (AST, IR, optimization passes, executable).
+why_exists: It makes the economic argument intuitive. If analysis can be amortized across all executions for code, it can be for knowledge too.
+where_appears: ["Knowledge Compiler blog post table", "SKCE root concept descent"]
+prerequisites: [compiler-theory]
+dependencies: []
+related_concepts: [compile-time-ai, intermediate-representation]
+mathematical_foundations: []
+historical_evolution: Used throughout the 2026-07-11 and 2026-07-12 posts as the central framing.
+implementation_details: "Table: Source code|Markdown; AST|DocAST; IR|Semantic IR; Optimization|Pruning/Dedup; Executable|Static Next.js app."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

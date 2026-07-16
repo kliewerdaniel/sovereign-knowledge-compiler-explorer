@@ -1,0 +1,15 @@
+id: compile-time-ai
+title: Compile-Time AI
+kind: pattern
+abstraction_level: 1
+tags: [compile-time-ai, ai-architecture, beyond-rag]
+what_is_it: Compile-Time AI is the architectural pattern of moving expensive semantic reasoning out of the request path and into a build step — so a token (this era's CPU cycle) is spent once, deliberately, to produce an artifact that is cheap to consume forever after.
+why_exists: Runtime AI (RAG, agentic systems) re-derives meaning from raw material on every query — nothing compounds, every query pays full price. Compile-Time AI applies the compiler discipline (amortize analysis once) to knowledge, context, and agent skills.
+where_appears: ["Compile-Time AI blog post (2026-07-12)", "Taxonomy of kib, Kompile, Context Compilation Theory, llm-wiki-compiler, OVIR, SkCC"]
+prerequisites: [rag, software-compiler-analogy]
+dependencies: [intermediate-representation, compiler-passes]
+related_concepts: [knowledge-compiler, context-compilation, sovereign-ai, runtime-optimization]
+mathematical_foundations: []
+historical_evolution: Named and surveyed across six independent teams (2026-07-12) converging with no cross-citation — evidence of a real convergent trend, not marketing.
+implementation_details: Enacted by the Knowledge Compiler SDK as a 9-phase pipeline; SKCE is its reflexive application (compiling its own explanation).
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture"]

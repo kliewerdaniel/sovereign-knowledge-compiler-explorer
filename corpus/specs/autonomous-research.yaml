@@ -1,0 +1,15 @@
+id: autonomous-research
+title: Autonomous Research
+kind: pattern
+abstraction_level: 2
+tags: [agents, recursive, research]
+what_is_it: The recursive-research loop where the compiler compiles its own next generation of passes by comparing its architecture against the literature and proposing typed pass YAML.
+why_exists: A compiler that can compile its own gaps forward compounds; durable IR-as-state means the next agent session continues, not resets.
+where_appears: ["Recursive Research Compiler post (2026-07-14)", "docs/AUTONOMOUS_RESEARCH.md"]
+prerequisites: [knowledge-compiler-sdk, plugin-architecture]
+dependencies: [prerequisite-inference]
+related_concepts: [knowledge-compiler-sdk, plugin-architecture, compile-time-ai]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: "The SDK applied compile-time AI reflexively to its own architecture; SKCE hosts the same loop for curriculum gaps."
+implementation_details: "Research pipeline R1-R5: ingest literature, extract concepts, architecture diff, propose pass, evaluate (honest failure)."
+source_references: ["blog:2026-07-14-recursive-research-compiler-knowledge-compiler-sdk", "docs/AUTONOMOUS_RESEARCH.md"]

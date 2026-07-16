@@ -1,0 +1,15 @@
+id: data-structures
+title: Data Structures
+kind: cs
+abstraction_level: 1
+tags: [data-structures, cs]
+what_is_it: Ways of organizing data for efficient access — arrays, trees, graphs, hash maps, heaps.
+why_exists: The IR store, inverted index, and priority queues in the scheduler are all data structures; choosing them right keeps compilation fast.
+where_appears: ["SKCE IRStore, search-index (inverted index)"]
+prerequisites: [algorithms]
+dependencies: []
+related_concepts: [algorithms, graph-algorithms]
+mathematical_foundations: []
+historical_evolution: "Foundational to all of computer science; the substrate every algorithm runs on."
+implementation_details: "SKCE search-index.json is an inverted index (token -> [conceptId]); IRStore is an in-memory dict of ConceptNodes."
+source_references: ["source:compiler/ir.py"]

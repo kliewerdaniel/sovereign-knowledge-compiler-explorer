@@ -1,0 +1,15 @@
+id: sovereign-knowledge-compiler
+title: Sovereign Knowledge Compiler
+kind: architecture
+abstraction_level: 0
+tags: [knowledge-compiler, compile-time-ai, sovereign-ai, local-first]
+what_is_it: The Sovereign Knowledge Compiler (SKC) is a compile-time system for knowledge. Like a software compiler, it parses a corpus, builds intermediate representations, runs deterministic and model-assisted passes, and emits static, inspectable, versioned artifacts — so the runtime does cheap lookups instead of re-reasoning on every query.
+why_exists: To stop paying the full reasoning cost on every query. For a stable knowledge domain, re-deriving meaning at request time (RAG) is an interpreter where a compiler is the right tool. SKC amortizes reasoning across all future queries and keeps the artifact local, inspectable, and sovereign.
+where_appears: ["The Sovereign Knowledge Compiler blog post (2026-07-15)", "sovereign-knowledge-compiler repo", "This very explorer app (which is its first compiled artifact)"]
+prerequisites: [compile-time-ai, compiler-passes, intermediate-representation]
+dependencies: [knowledge-graphs, embeddings, crdt-sync]
+related_concepts: [knowledge-compiler-sdk, rag, graphrag, cognitive-memory]
+mathematical_foundations: [graph-algorithms, probability]
+historical_evolution: Evolved from the original 9-phase Knowledge Compiler (2026-07-11) through the Compile-Time AI taxonomy (2026-07-12) and the Recursive Research Compiler (2026-07-14), landing as a reference implementation that compiles 153 blog posts into 1,513 facts and 436 decisions.
+implementation_details: Reference implementation at kliewerdaniel/sovereign-knowledge-compiler — frontend orchestrates extract -> consolidate -> index -> persist -> query, plus a CRDT sync layer and an optional local-LLM deep-synthesis pass.
+source_references: ["blog:2026-07-15-sovereign-memory-bank-deepening-local-first-cognitive-memory", "source:src/sovereign_knowledge_compiler/compiler/frontend.py"]

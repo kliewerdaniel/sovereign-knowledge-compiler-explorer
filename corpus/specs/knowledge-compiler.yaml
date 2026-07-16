@@ -1,0 +1,15 @@
+id: knowledge-compiler
+title: Knowledge Compiler
+kind: concept
+abstraction_level: 1
+tags: [knowledge-compiler, knowledge-graphs, beyond-rag]
+what_is_it: The Knowledge Compiler is the original project that turns collections of Markdown documents into statically-deployable semantic artifacts (knowledge graphs, concept hierarchies, vector embeddings, cluster maps) via a multi-pass compilation pipeline — no runtime LLM inference required.
+why_exists: It asks why an AI system should re-discover the same knowledge on every query, and answers by amortizing semantic analysis into a build step that emits a self-contained reasoning substrate.
+where_appears: ["Knowledge Compiler blog post (2026-07-11)", "kliewerdaniel/knowledge-compiler"]
+prerequisites: [compile-time-ai, knowledge-graphs]
+dependencies: [embeddings, clustering]
+related_concepts: [sovereign-knowledge-compiler, rag, graphrag, compile-time-ai]
+mathematical_foundations: [graph-algorithms, information-theory]
+historical_evolution: "The first public statement of the pattern (2026-07-11): 9-phase pipeline, 113 docs -> 192k concept nodes in 1.5s."
+implementation_details: "Monorepo of 7 packages + web app; phases: parsing, analysis, graph, embedding, clustering, optimization, generation."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

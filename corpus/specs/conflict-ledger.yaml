@@ -1,0 +1,15 @@
+id: conflict-ledger
+title: Conflict Ledger
+kind: concept
+abstraction_level: 3
+tags: [crdt, conflicts, human-in-the-loop]
+what_is_it: A record of losing values when concurrent edits to the same entity resolve by Lamport LWW — kept so every auto-resolution is inspectable and overridable by a human.
+why_exists: "It is the human-in-the-loop guarantee: convergence is automatic, but a person can always reverse an automatic decision. Sovereignty includes the right to override."
+where_appears: ["sovereign-knowledge-compiler sync/crdt.py"]
+prerequisites: [crdt-sync, distributed-systems]
+dependencies: []
+related_concepts: [crdt-sync, compaction-decay]
+mathematical_foundations: [distributed-systems]
+historical_evolution: "The blog post calls for a human-overridable conflict-resolution surface; the ledger is its realization."
+implementation_details: "MemorySync.pending_conflicts() lists losers; resolve(entity, value) applies a human override."
+source_references: ["source:src/sovereign_knowledge_compiler/sync/crdt.py", "blog:2026-07-15-sovereign-memory-bank-deepening-local-first-cognitive-memory"]

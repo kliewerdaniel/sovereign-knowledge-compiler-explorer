@@ -1,0 +1,15 @@
+id: clustering
+title: Clustering
+kind: concept
+abstraction_level: 3
+tags: [clustering, graph-algorithms]
+what_is_it: Grouping items so similar ones share a cluster — in knowledge compilation, grouping embeddings by similarity into topic clusters.
+why_exists: Clustering turns a flat embedding set into navigable topic groups (the cluster graph view), a cheap runtime structure.
+where_appears: ["Knowledge Compiler clustering phase (Phase 5)"]
+prerequisites: [embeddings, cosine-similarity, graph-algorithms]
+dependencies: []
+related_concepts: [embeddings, vector-search, knowledge-graphs]
+mathematical_foundations: [linear-algebra, probability]
+historical_evolution: "Connected-components clustering on a similarity graph (threshold >= 0.1) with centroid averaging."
+implementation_details: "SKCE's concept graph is edge-weighted by co-occurrence rather than geometric clustering, but the principle is shared."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

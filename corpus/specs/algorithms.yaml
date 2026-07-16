@@ -1,0 +1,15 @@
+id: algorithms
+title: Algorithms
+kind: cs
+abstraction_level: 1
+tags: [algorithms, cs]
+what_is_it: Step-by-step procedures for computation — sorting, searching, graph traversal, and their time/space complexity.
+why_exists: Every compiler pass is an algorithm; understanding complexity (O(n), O(n^2)) explains why corpus-scale compilation needs top-k thresholding.
+where_appears: ["SKCE foundation for graph-algorithms, compiler-theory, type-theory"]
+prerequisites: []
+dependencies: []
+related_concepts: [data-structures, graph-algorithms, compiler-theory]
+mathematical_foundations: []
+historical_evolution: "From Euclid's algorithm to modern complexity theory (Cook/Levin, P vs NP)."
+implementation_details: "SKCE uses O(V+E) topological sort and O(n) spherical layout; clustering similarity is O(n^2) mitigated by top-k."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

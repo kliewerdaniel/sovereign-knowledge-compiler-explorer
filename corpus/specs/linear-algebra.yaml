@@ -1,0 +1,15 @@
+id: linear-algebra
+title: Linear Algebra
+kind: math
+abstraction_level: 1
+tags: [linear-algebra, math]
+what_is_it: The mathematics of vectors and matrices — vector spaces, dot products, norms, and linear transformations.
+why_exists: Embeddings live in vector spaces; similarity, projection, and dimensionality reduction are all linear algebra. It is the floor beneath most of SKC's semantic machinery.
+where_appears: ["SKCE foundation link from embeddings, vector-search, cosine-similarity"]
+prerequisites: []
+dependencies: []
+related_concepts: [vector-spaces, cosine-similarity, embeddings, information-theory]
+mathematical_foundations: []
+historical_evolution: "Foundational since the 19th century; the engine of every modern embedding model."
+implementation_details: "Cosine similarity = (a.b)/(|a||b|); random-projection dimensionality reduction uses Uniform(-1,1) scaled by 2/sqrt(d)."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

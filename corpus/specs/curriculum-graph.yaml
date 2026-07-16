@@ -1,0 +1,15 @@
+id: curriculum-graph
+title: Curriculum Graph
+kind: concept
+abstraction_level: 1
+tags: [curriculum, graph]
+what_is_it: The compiled artifact's backbone — a directed acyclic graph over ConceptNodes where edges encode prerequisite, dependency, and foundation relations, enabling recursive descent.
+why_exists: It is what distinguishes SKCE from a flat doc site; the DAG is what makes the exploration 'infinitely explorable' rather than a stack of pages.
+where_appears: ["docs/CURRICULUM_GRAPH.md", "SKCE prerequisite graph view"]
+prerequisites: [concept-node, prerequisite-inference, graph-algorithms]
+dependencies: [relationship-edge]
+related_concepts: [concept-node, prerequisite-inference, pedagogical-model, knowledge-graphs]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: "Built by pass-05 (edges) + pass-07 (topological learning paths + gap detection)."
+implementation_details: "Validated acyclic in ir.validate(); cycle = build error. Root is 'sovereign-knowledge-compiler'."
+source_references: ["docs/CURRICULUM_GRAPH.md"]

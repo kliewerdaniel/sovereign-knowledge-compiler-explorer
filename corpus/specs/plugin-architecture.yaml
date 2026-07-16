@@ -1,0 +1,15 @@
+id: plugin-architecture
+title: Plugin Architecture
+kind: architecture
+abstraction_level: 2
+tags: [plugin, architecture, passes]
+what_is_it: The convention that every compiler pass is a directory with a pass.yaml (declares I/O, dependencies, determinism) and a run.py (the logic), discovered and scheduled by a registry.
+why_exists: It keeps the compiler extensible without forks — add a pass by adding a directory — and lets an agent propose new passes as typed YAML (the recursive-research loop).
+where_appears: ["compiler/passes_framework.py", "passes/pass-0X-* directories"]
+prerequisites: [compiler-passes, intermediate-representation]
+dependencies: []
+related_concepts: [compiler-passes, autonomous-research, prerequisite-inference]
+mathematical_foundations: [graph-algorithms]
+historical_evolution: "Mirrors the Knowledge Compiler SDK pass registry; SKCE adds the recursive self-extension story."
+implementation_details: "PassRegistry loads pass.yaml + run.py, topologically sorts (Kahn), runs deterministic passes always, model passes when available."
+source_references: ["source:compiler/passes_framework.py", "docs/PLUGIN_ARCHITECTURE.md"]

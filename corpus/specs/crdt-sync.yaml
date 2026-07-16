@@ -1,0 +1,15 @@
+id: crdt-sync
+title: CRDT Sync
+kind: concept
+abstraction_level: 2
+tags: [crdt, sync, distributed-systems, local-first]
+what_is_it: CRDT (Conflict-Free Replicated Data Type) sync replicates compiled memory across a user's own devices with a state-based merge that is commutative, associative, and idempotent — so two devices converge with no server.
+why_exists: Sovereign memory must replicate without a cloud. CRDTs guarantee convergence under arbitrary exchange order, and Remove-Wins semantics mean a delete tombstones content everywhere.
+where_appears: ["sovereign-knowledge-compiler sync/ package", "Explained by SKCE as a concept with a distributed-systems foundation"]
+prerequisites: [distributed-systems]
+dependencies: []
+related_concepts: [sovereign-knowledge-compiler, compaction-decay, conflict-ledger]
+mathematical_foundations: [distributed-systems]
+historical_evolution: "Based on Shapiro et al., 'Conflict-Free Replicated Data Types' (INRIA, 2011). SKCE implements a Remove-Wins Set + Lamport-ordered LWW with a human-overridable conflict ledger."
+implementation_details: "sync/crdt.py: FactSet (Remove-Wins), LamportClock (causal LWW), VersionVector. Deletion tombstones a SHA-256 content hash so it disappears from every replica after merge."
+source_references: ["source:src/sovereign_knowledge_compiler/sync/crdt.py", "blog:2026-07-15-sovereign-memory-bank-deepening-local-first-cognitive-memory"]

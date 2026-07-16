@@ -1,0 +1,15 @@
+id: embeddings
+title: Embeddings
+kind: concept
+abstraction_level: 2
+tags: [embeddings, vector-search, semantic-search]
+what_is_it: An embedding is a dense vector representation of text (or other data) such that semantic similarity corresponds to geometric proximity in vector space.
+why_exists: "Embeddings make semantic similarity computable: once text is a vector, 'how related are these two passages?' becomes a distance calculation, enabling retrieval and clustering without symbolic rules."
+where_appears: ["Knowledge Compiler embedding generator pass (Phase 4)", "SKCE foundation links from concepts to linear algebra"]
+prerequisites: [linear-algebra, vector-spaces]
+dependencies: [cosine-similarity]
+related_concepts: [vector-search, information-retrieval, clustering]
+mathematical_foundations: [linear-algebra, information-theory]
+historical_evolution: "From Word2Vec (2013) and GloVe to contextual transformers (BERT, 2018) and frontier text-embedding-3 models. The 2026-07-11 post notes a deterministic TF-IDF fallback enables the pipeline with no API key."
+implementation_details: Upstream EmbeddingGeneratorPass uses OpenAI embeddings with a TF-IDF pseudo-embedding fallback; SKCE explains the math rather than producing live embeddings at runtime.
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

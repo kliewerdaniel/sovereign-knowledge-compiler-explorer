@@ -1,0 +1,15 @@
+id: graph-algorithms
+title: Graph Algorithms
+kind: cs
+abstraction_level: 2
+tags: [graph-algorithms, cs]
+what_is_it: Algorithms operating on graphs — traversal, shortest path, connected components, clustering coefficient, PageRank, topological sort.
+why_exists: Knowledge graphs and prerequisite DAGs are graphs; their construction, layout, and traversal all rely on graph algorithms.
+where_appears: ["Knowledge Compiler graph construction + statistics passes", "SKCE curriculum optimization (topological learning paths)"]
+prerequisites: [algorithms, data-structures]
+dependencies: []
+related_concepts: [knowledge-graphs, embeddings, intermediate-representation]
+mathematical_foundations: [algorithms, probability]
+historical_evolution: "PageRank (1998) for importance; connected-components clustering for grouping; Kahn's algorithm (1962) for topological ordering."
+implementation_details: "SKCE uses Kahn's algorithm for prerequisite ordering and connected-components-style traversal for learning paths; upstream uses PageRank + clustering coefficient."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

@@ -1,48 +1,78 @@
 # Sovereign Knowledge Compiler Explorer
 
-> An interactive explanation engine that recursively explains how the Sovereign
-> Knowledge Compiler works — by compiling itself.
+The first **self-explaining** artifact of the Sovereign Knowledge Compiler.
 
-This repository is in the **design / documentation phase**. No application code
-has been written. The `/docs` directory contains the complete design
-specification required before implementation begins.
-
-## What this is
-
-The Sovereign Knowledge Compiler (SKC) is a compile-time system that organizes
-knowledge the way a traditional compiler organizes code: it parses a corpus,
-builds intermediate representations, runs deterministic and model-assisted
-passes, and emits structured artifacts.
-
-This project's mission is to produce the **first self-explaining SKC
-demonstration**. The compiler's first compiled artifact is an interactive
-application that *teaches users how the compiler works*, descending from the
+The compiler's first compiled output is this interactive application, which
+teaches you how the Sovereign Knowledge Compiler works — recursively, from the
 highest-level architecture down to the underlying mathematics and computer
-science foundations — infinitely explorable, like a curriculum rather than
-documentation.
+science. There is no chatbot here: the application is a **static artifact**,
+served with **zero runtime inference**.
 
-## Repository status
+> Understanding itself can be compiled.
 
-- ✅ Git initialized
-- ✅ `/docs` design specification (in progress)
-- ⬜ Implementation phase (not started — awaiting review)
-- ⬜ No commits created yet
-- ⬜ No remote repository created yet
+## The thesis
+
+| Dimension | Runtime LLM conversation | Compiled curriculum (SKCE) |
+|---|---|---|
+| Cost per read | Full reasoning per query | Zero inference; static artifact |
+| Determinism | Non-deterministic every time | Deterministic artifact (model passes recorded) |
+| Sovereignty | Depends on cloud API | Local-first, inspectable, versionable |
+| Structure | Emergent in transcript | Baked-in prerequisite graph |
+| Drift | Conversation evaporates | Durable graph, re-compilable |
+
+## Repo layout
+
+```
+sovereign-knowledge-compiler-explorer/
+├── compiler/                 # the compile-time curriculum compiler (pure Python, no heavy deps)
+│   ├── ir.py                 #   typed intermediate representation (ConceptNode / RelationshipEdge)
+│   ├── artifact_store.py     #   immutable, content-hashed artifact store
+│   ├── passes_framework.py   #   pass registry + Kahn scheduler + honesty guard
+│   ├── passes/pass-0X-*/     #   declarative passes (pass.yaml + run.py)
+│   └── cli.py                #   `python3 -m compiler.cli build ...`
+├── corpus/                   # typed corpus: blog/ (seed), specs/ (declared concept spine), src/ (future)
+├── apps/explorer/            # static Next.js app (output: export) — reads the compiled artifact only
+├── docs/                     # 23 design documents (architecture, pipeline, pedagogy, roadmap, ...)
+└── build.sh                  # reproducible: compile -> copy -> build
+```
+
+## Build & run
+
+```bash
+./build.sh                  # compiles curriculum, copies into app, builds static site
+# static site -> apps/explorer/out/
+```
+
+Then serve the static output:
+
+```bash
+npx serve apps/explorer/out     # or any static host
+```
+
+No model is required for a working build. Model-assisted passes (prerequisite
+inference enrichment, misconception detection) degrade gracefully to
+deterministic fallbacks when no local LLM endpoint is available.
+
+## Recursive descent
+
+Open the root concept. Every concept knows: what it is, why it exists, what it
+depends on, its mathematical foundations, and where to go next. Descend until
+you hit linear algebra.
 
 ## Documentation
 
-All design documents live in [`/docs`](./docs). Start with:
+See [`docs/`](./docs) for the full design specification — 23 documents covering
+system architecture, the compiler pipeline, the intermediate representation,
+plugin architecture, the pedagogical model, the research pipeline, the
+visualization system, the autonomous-research loop, and the roadmap.
 
-- [`docs/README.md`](./docs/README.md) — documentation index
-- [`docs/PROJECT_VISION.md`](./docs/PROJECT_VISION.md) — mission and thesis
-- [`docs/SYSTEM_ARCHITECTURE.md`](./docs/SYSTEM_ARCHITECTURE.md) — layered architecture
-- [`docs/COMPILER_PIPELINE.md`](./docs/COMPILER_PIPELINE.md) — the compile pipeline
+## Status
 
-## Related work (canonical research record)
+- Compiler: deterministic, validated, content-hashed output.
+- Explorer: 74 prerendered concept pages + graph / paths / search / about,
+  82 static pages total, no runtime inference.
+- Honesty invariants from the upstream SDK are preserved: outbound-edge weights
+  are raw counts (not confidences), incomplete concepts surface as build gaps,
+  and the build fails loudly on invalid (cyclic) prerequisite DAGs.
 
-- Blog: https://www.danielkliewer.com
-- Compiler repo: https://github.com/kliewerdaniel/sovereign-knowledge-compiler
-
-## License
-
-To be determined during implementation phase.
+Canonical research record: https://www.danielkliewer.com

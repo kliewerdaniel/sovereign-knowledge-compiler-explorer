@@ -1,0 +1,15 @@
+id: context-compilation
+title: Context Compilation
+kind: pattern
+abstraction_level: 2
+tags: [compile-time-ai, context]
+what_is_it: Turning heterogeneous available context (memory, preferences, prior commitments) into a governed working set for a specific reasoning task — the layer above knowledge compilation.
+why_exists: It consumes compiled knowledge as one input and produces a task-scoped, policy-aware context object, lifting governance into compile time.
+where_appears: ["Compile-Time AI taxonomy (2026-07-12), Brian Letort"]
+prerequisites: [compile-time-ai, context-ir]
+dependencies: []
+related_concepts: [context-ir, compile-time-ai, sovereign-ai]
+mathematical_foundations: [type-theory]
+historical_evolution: "Formalized by Brian Letort as the layer between retrieval and reasoning."
+implementation_details: "SKCE sits in knowledge + application compilation; context compilation is an adjacent layer it explains but does not implement."
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture"]

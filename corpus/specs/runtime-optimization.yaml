@@ -1,0 +1,15 @@
+id: runtime-optimization
+title: Runtime Optimization
+kind: pattern
+abstraction_level: 2
+tags: [compile-time-ai, runtime]
+what_is_it: The compile-time-AI layer that reduces the cost and latency of the model that finally executes at inference — fusion, dead-code elimination, hardware targeting.
+why_exists: It is the layer where compile-time AI most literally reuses classical compiler techniques; Kompile's 25-pass graph optimizer is the exemplar.
+where_appears: ["Compile-Time AI taxonomy (2026-07-12)"]
+prerequisites: [compile-time-ai, compiler-theory]
+dependencies: []
+related_concepts: [compile-time-ai, knowledge-compiler-sdk, compiler-passes]
+mathematical_foundations: [algorithms]
+historical_evolution: "Kompile reduced LLaMA cast ops from 668 to 108 via fixed-point graph optimization."
+implementation_details: "SKCE itself is a knowledge/application-compilation instance, not a runtime-optimization instance — but the pattern is the same discipline."
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture"]

@@ -1,0 +1,15 @@
+id: information-retrieval
+title: Information Retrieval
+kind: cs
+abstraction_level: 2
+tags: [information-retrieval, cs]
+what_is_it: The field of finding material relevant to a query — indexes, ranking, precision/recall.
+why_exists: "Compile-time AI is IR inverted: instead of retrieving at query time, it pre-compiles the index/ranking once. Understanding IR explains why the runtime can be a thin client."
+where_appears: ["SKCE foundation for rag, vector-search"]
+prerequisites: [algorithms]
+dependencies: []
+related_concepts: [vector-search, rag, embeddings]
+mathematical_foundations: [probability, information-theory]
+historical_evolution: "From inverted indexes (1960s) to BM25 to neural/vector retrieval."
+implementation_details: "Search engines compile inverted indexes at crawl time and serve queries with zero inference — the exact pattern SKCE copies for knowledge."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

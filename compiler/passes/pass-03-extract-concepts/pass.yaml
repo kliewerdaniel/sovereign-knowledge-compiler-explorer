@@ -1,0 +1,11 @@
+id: pass-03-extract-concepts
+name: Concept Extraction
+phase: 3
+deterministic: true
+requires_model: false
+consumes: [SourceRecord, DocAST]
+produces: [ConceptNode]
+depends_on: [pass-02-normalize]
+honesty:
+  fail_loud: true
+  record_provenance: true

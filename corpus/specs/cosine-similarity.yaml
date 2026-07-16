@@ -1,0 +1,15 @@
+id: cosine-similarity
+title: Cosine Similarity
+kind: math
+abstraction_level: 2
+tags: [linear-algebra, math]
+what_is_it: A measure of similarity between two vectors defined as their dot product divided by the product of their magnitudes — equivalently, the cosine of the angle between them.
+why_exists: Cosine similarity is the workhorse of embedding-based retrieval and clustering; it is insensitive to vector length, so it captures direction (semantics) over magnitude.
+where_appears: ["SKCE foundation for embeddings/vector-search", "Upstream similarity matrix pass"]
+prerequisites: [vector-spaces, linear-algebra]
+dependencies: []
+related_concepts: [embeddings, vector-search, information-retrieval]
+mathematical_foundations: [linear-algebra]
+historical_evolution: "Standard since latent semantic analysis (1990s); the default embedding distance."
+implementation_details: "sim(a,b) = (a.b)/(|a||b|); upstream keeps top-10 most similar per vector for clustering."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

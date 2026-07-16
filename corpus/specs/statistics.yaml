@@ -1,0 +1,15 @@
+id: statistics
+title: Statistics
+kind: math
+abstraction_level: 2
+tags: [statistics, math]
+what_is_it: The mathematics of collecting, summarizing, and inferring from data — distributions, means, variance, hypothesis testing.
+why_exists: Evaluating compiler output (coverage, confidence distributions, misconception frequency) is statistical; understanding it prevents over-trusting single runs.
+where_appears: ["SKCE build report (coverage, model vs deterministic split)"]
+prerequisites: [probability]
+dependencies: []
+related_concepts: [probability, information-theory]
+mathematical_foundations: [probability]
+historical_evolution: "From Fisher and Pearson to modern ML evaluation metrics."
+implementation_details: "SKCE reports coverage as a ratio and model-vs-deterministic node/edge counts in the manifest."
+source_references: ["source:compiler/artifact_store.py"]

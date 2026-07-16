@@ -1,0 +1,15 @@
+id: pedagogical-model
+title: Pedagogical Model
+kind: concept
+abstraction_level: 1
+tags: [pedagogy, design]
+what_is_it: The contract every concept must satisfy so the app recursively explains itself — ten questions (what/why/where/prerequisites/dependencies/related/foundations/history/implementation/sources).
+why_exists: If a ConceptNode is missing any field, recursive descent dead-ends. The compile-time approach enforces completeness; a missing field is a build signal, not a reader's dead end.
+where_appears: ["docs/PEDAGOGICAL_MODEL.md", "Every concept page"]
+prerequisites: [concept-node]
+dependencies: [concept-node]
+related_concepts: [concept-node, curriculum-graph, prerequisite-inference]
+mathematical_foundations: [type-theory]
+historical_evolution: "Derived from the project brief's 'every concept should know...' list; enforced at compile time via gap detection."
+implementation_details: "ConceptContract dataclass in ir.py; pass-07 flags incomplete contracts as gap edges."
+source_references: ["docs/PEDAGOGICAL_MODEL.md"]

@@ -1,0 +1,15 @@
+id: knowledge-compiler-sdk
+title: Knowledge Compiler SDK
+kind: architecture
+abstraction_level: 1
+tags: [knowledge-compiler, sdk]
+what_is_it: The SDK is the 9-phase, pass-YAML compiler engine SKCE compounds on — it turns Markdown into inspectable intermediate representations and lets an agent operate it.
+why_exists: SKCE should not reimplement a compiler; it builds on the SDK's pipeline, artifact store, and agent skills to compile its own curriculum.
+where_appears: ["kliewerdaniel/knowledge-compiler-sdk", "Recursive Research Compiler post (2026-07-14)"]
+prerequisites: [compiler-passes, intermediate-representation]
+dependencies: [plugin-architecture]
+related_concepts: [sovereign-knowledge-compiler, compile-time-ai, autonomous-research]
+mathematical_foundations: []
+historical_evolution: "The SDK turned the Knowledge Compiler pattern into operable infrastructure with 17 agent skills."
+implementation_details: "SKCE's CurriculumCompiler reuses the pass/scheduler/artifact philosophy; it is a sibling, not a fork."
+source_references: ["blog:2026-07-14-recursive-research-compiler-knowledge-compiler-sdk"]

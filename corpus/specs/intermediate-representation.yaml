@@ -1,0 +1,15 @@
+id: intermediate-representation
+title: Intermediate Representation
+kind: ir
+abstraction_level: 1
+tags: [intermediate-representation, ir, compiler-theory]
+what_is_it: An Intermediate Representation (IR) is a typed, structured form of the program or knowledge that sits between raw input and the final artifact. In SKCE the IR is a graph of ConceptNodes and typed edges shared by every pass.
+why_exists: The IR is the stable core of a compile-time system. Per Brian Letort's "continuity of cognition", the IR survives changes above (new corpus) and below (new emit targets) it. Swap your data source or your runtime; the compiled IR does not have to change.
+where_appears: ["Knowledge Compiler SDK ir/ package", "SKCE compiler/ir.py"]
+prerequisites: [compiler-theory, type-theory]
+dependencies: [concept-node, relationship-edge]
+related_concepts: [compiler-passes, knowledge-graphs, context-ir]
+mathematical_foundations: [type-theory]
+historical_evolution: From LLVM IR / MLIR in software compilers to Context IR (Brian Letort) and the SKCE ConceptNode graph — the same idea applied to knowledge.
+implementation_details: "SKCE IR types (ir.py): ConceptNode, RelationshipEdge, MisconceptionNode, LearningPathNode, SourceRef. Validated (acyclicity, dangling refs) before emit."
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture", "source:compiler/ir.py"]

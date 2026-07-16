@@ -1,0 +1,15 @@
+id: context-ir
+title: Context Intermediate Representation
+kind: ir
+abstraction_level: 2
+tags: [ir, context-compilation]
+what_is_it: Context IR (Brian Letort) is the typed semantic object sitting between raw source context and runtime execution — facts, events, entities, commitments, plus governance metadata (provenance, policy, freshness, confidence, explicit omissions).
+why_exists: It names the missing layer between retrieval and reasoning, and formalizes "continuity of cognition" — the compiler + IR core survives changes above and below it.
+where_appears: ["Cited in the Compile-Time AI taxonomy (2026-07-12)"]
+prerequisites: [intermediate-representation]
+dependencies: []
+related_concepts: [intermediate-representation, compile-time-ai, context-compilation]
+mathematical_foundations: [type-theory]
+historical_evolution: "Proposed by Brian Letort as 'the missing layer'; the sharpest formalization of the compile-time pattern."
+implementation_details: "SKCE's ConceptNode is a knowledge-domain cousin of Context IR, sharing the governance-metadata stance (provenance + confidence on every node)."
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture"]

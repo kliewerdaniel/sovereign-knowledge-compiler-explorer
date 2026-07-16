@@ -1,0 +1,15 @@
+id: graphrag
+title: GraphRAG
+kind: concept
+abstraction_level: 3
+tags: [graphrag, rag, knowledge-graphs]
+what_is_it: Retrieval-Augmented Generation that organizes documents into a knowledge graph, enabling multi-hop reasoning and community summarization at query time.
+why_exists: GraphRAG improves retrieval quality over naive vector search on sensemaking queries — but still pays runtime cost. SKC compiles the graph once instead.
+where_appears: ["Contrasted in the Knowledge Compiler post (2026-07-11)"]
+prerequisites: [rag, knowledge-graphs]
+dependencies: []
+related_concepts: [rag, knowledge-graphs, vector-search]
+mathematical_foundations: [graph-algorithms, information-theory]
+historical_evolution: "Microsoft GraphRAG (2024) demonstrated graph retrieval beats vector search on complex queries."
+implementation_details: "SKCE builds the graph at compile time (zero runtime cost); GraphRAG builds/queries it per request."
+source_references: ["blog:2026-07-11-knowledge-compiler-compiling-human-knowledge-into-static-semantic-artifacts"]

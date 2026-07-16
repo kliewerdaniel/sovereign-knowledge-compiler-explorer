@@ -1,0 +1,15 @@
+id: type-theory
+title: Type Theory
+kind: cs
+abstraction_level: 3
+tags: [type-theory, cs]
+what_is_it: The mathematical study of type systems — rules that classify expressions and guarantee certain behaviors before execution.
+why_exists: A typed IR (ConceptNode with kind/enums) catches malformed artifacts at compile time, the same way a type system catches bad code. SKCC's SkIR is a strongly-typed IR for agent skills.
+where_appears: ["Intermediate Representation design", "SkCC paper (skill compilation)"]
+prerequisites: [algorithms]
+dependencies: []
+related_concepts: [intermediate-representation, compiler-theory]
+mathematical_foundations: [algorithms]
+historical_evolution: "Strongly-typed IRs (SkIR, MLIR) let compilers validate structure before emission. SKCE enforces node/edge types in ir.py."
+implementation_details: CONCEPT_KINDS and EDGE_TYPES enums in ir.py validate every node/edge.
+source_references: ["blog:2026-07-12-compile-time-ai-knowledge-compiler-architecture"]

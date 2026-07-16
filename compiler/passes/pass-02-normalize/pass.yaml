@@ -1,0 +1,11 @@
+id: pass-02-normalize
+name: Normalize
+phase: 2
+deterministic: true
+requires_model: false
+consumes: [SourceRecord]
+produces: [DocAST]
+depends_on: [pass-01-ingest]
+honesty:
+  fail_loud: true
+  record_provenance: true

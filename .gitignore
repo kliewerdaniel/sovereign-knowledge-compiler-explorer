@@ -20,23 +20,22 @@ env/
 .pytest_cache/
 .ruff_cache/
 
-## Node / Frontend (future implementation phase — not yet used)
+## Node / Frontend
 node_modules/
 dist/
 build/
 .next/
-.out/
+out/
 *.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-## Generated Artifacts (compiler output — to be produced in implementation phase)
-/generated/
-/output/
-/dist/
-/artifacts/
-*.generated.*
+## Compiler-derived artifacts (rebuild with ./build.sh; not committed)
+/build/
+/apps/explorer/out/
+/apps/explorer/public/curriculum/
+*.tmp
 
 ## Environment / Secrets
 .env

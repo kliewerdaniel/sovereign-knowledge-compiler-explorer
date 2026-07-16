@@ -1,0 +1,15 @@
+id: cognitive-memory
+title: Cognitive Memory
+kind: concept
+abstraction_level: 2
+tags: [memory, local-first, sovereign-ai]
+what_is_it: Sovereign cognitive memory is a 7-layer local-first memory system (sensory, working, short-term, long-term, semantic, episodic, procedural) that an agent compiles and queries rather than re-deriving each turn.
+why_exists: Compile-time memory is the application of compile-time AI to an agent's own state — pay the reasoning cost once, serve cheap lookups forever after.
+where_appears: ["Sovereign Memory Bank posts", "sovereign-knowledge-compiler runtime"]
+prerequisites: [sovereign-knowledge-compiler]
+dependencies: [crdt-sync]
+related_concepts: [sovereign-knowledge-compiler, crdt-sync, rag]
+mathematical_foundations: [probability]
+historical_evolution: "The Sovereign Memory Bank deepened local-first cognitive memory (2026-07-15); SKC is its compile-time realization."
+implementation_details: "Upstream MemoryRuntime does O(index) lookups against static artifacts; no reasoning at query time."
+source_references: ["blog:2026-07-15-sovereign-memory-bank-deepening-local-first-cognitive-memory"]
