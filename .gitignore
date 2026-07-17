@@ -60,3 +60,4 @@ chroma_db/
 *.log
 .cache/
 .tmp/
+.vercel
