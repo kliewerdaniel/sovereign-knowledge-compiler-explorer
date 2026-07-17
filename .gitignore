@@ -31,9 +31,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-## Compiler-derived artifacts (rebuild with ./build.sh; not committed)
-/build/
-/apps/explorer/out/
+## Compiler-derived artifacts (rebuild with scripts/build.sh; not committed)
+/apps/explorer/build/
 /apps/explorer/public/curriculum/
 *.tmp
 

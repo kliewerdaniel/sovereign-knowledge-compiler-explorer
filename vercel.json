@@ -1,5 +1,0 @@
-{
-  "installCommand": "cd apps/explorer && npm install",
-  "buildCommand": "bash apps/explorer/scripts/build.sh",
-  "framework": "nextjs"
-}
