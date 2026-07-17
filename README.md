@@ -10,7 +10,12 @@ served with **zero runtime inference**.
 
 > Understanding itself can be compiled.
 
-## The thesis
+## Live demo
+
+**https://skce-explorer.vercel.app**
+
+A static, prerendered artifact — open the root concept and descend. No model
+runs when you read it.
 
 | Dimension | Runtime LLM conversation | Compiled curriculum (SKCE) |
 |---|---|---|
@@ -76,3 +81,5 @@ visualization system, the autonomous-research loop, and the roadmap.
   and the build fails loudly on invalid (cyclic) prerequisite DAGs.
 
 Canonical research record: https://www.danielkliewer.com
+
+Live demo: https://skce-explorer.vercel.app
