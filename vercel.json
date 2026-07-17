@@ -1,6 +1,5 @@
 {
-  "buildCommand": null,
-  "outputDirectory": "apps/explorer/out",
-  "framework": null,
-  "cleanUrls": true
+  "installCommand": "cd apps/explorer && npm install",
+  "buildCommand": "bash apps/explorer/scripts/build.sh",
+  "framework": "nextjs"
 }

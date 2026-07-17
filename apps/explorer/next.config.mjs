@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  // No output:export — Vercel serves this as a normal Next.js app. All pages are
+  // prerendered at build time (generateStaticParams), so read-time is still
+  // zero-inference; Vercel just handles routing correctly (no static-export
+  // trailing-slash mismatch).
   images: { unoptimized: true },
-  trailingSlash: true,
   typescript: { ignoreBuildErrors: true },
-  // No server runtime, no API routes. Pure static export.
 };
 
 export default nextConfig;
