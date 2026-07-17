@@ -123,10 +123,23 @@ class ArtifactStore:
 
     @staticmethod
     def _ontology_view(store: IRStore) -> Dict:
-        tree: Dict[str, Any] = {}
-        for c in store.concepts.values():
-            tree.setdefault(c.kind, []).append(c.id)
-        return {"kinds": tree}
+        # Concepts grouped by ontology kind. Emitted as a real {nodes, edges}
+        # graph (same shape as the other views) so the explorer can render it
+        # without special-casing — nodes carry `kind`, which the UI colors by,
+        # and prerequisite/related edges preserve the structure.
+        nodes = [
+            {"id": c.id, "title": c.title, "kind": c.kind,
+             "abstraction_level": c.abstraction_level, "confidence": c.confidence,
+             "source": c.source}
+            for c in store.concepts.values()
+        ]
+        edges = [
+            {"source": e.source, "target": e.target, "type": e.type,
+             "weight": e.weight, "confidence": e.confidence}
+            for e in store.edges
+            if e.type in {"prerequisite_of", "depends_on", "foundation_of", "related"}
+        ]
+        return {"nodes": nodes, "edges": edges}
 
     @staticmethod
     def _build_search_index(store: IRStore) -> Dict:

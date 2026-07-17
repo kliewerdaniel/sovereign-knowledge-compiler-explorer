@@ -55,7 +55,7 @@ export default function GraphClient() {
 
   const W = 900;
   const H = 640;
-  const pos = useMemo(() => (data ? layout(data.nodes, W, H) : {}), [data]);
+  const pos = useMemo(() => (data ? layout(data.nodes || [], W, H) : {}), [data]);
 
   const focusNeighbors = useMemo(() => {
     if (!focus || !data) return null;
@@ -140,7 +140,7 @@ export default function GraphClient() {
                 <circle cx={p[0]} cy={p[1]} r={r} fill={color} stroke="#05060a" strokeWidth={1} />
                 {(focus === node.id || !focus) && (
                   <text x={p[0] + r + 3} y={p[1] + 3} fontSize={9} fill="#8b9bb4">
-                    {node.title.length > 22 ? node.title.slice(0, 22) + "…" : node.title}
+                    {node.title?.length > 22 ? node.title.slice(0, 22) + "…" : node.title}
                   </text>
                 )}
               </g>

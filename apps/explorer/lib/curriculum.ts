@@ -15,12 +15,16 @@ export function getConceptStore(): Promise<Record<string, Concept>> {
 }
 
 export async function getConceptViews(): Promise<Record<string, GraphView>> {
-  const keys = ["concept-graph", "prerequisite-graph", "decision-graph", "ontology-graph", "misconception-map"];
+  // Only the four views the Graph page actually renders. Each is normalized to a
+  // {nodes, edges} shape so a malformed/missing artifact can never crash the page
+  // (the previous ontology crash was an {kinds:{}} payload with no `nodes`).
+  const keys = ["concept-graph", "prerequisite-graph", "decision-graph", "ontology-graph"];
   const out: Record<string, GraphView> = {};
   await Promise.all(
     keys.map(async (k) => {
       try {
-        out[k] = await loadJson<GraphView>(`graph-views/${k}.json`);
+        const v = await loadJson<any>(`graph-views/${k}.json`);
+        out[k] = { nodes: v.nodes || [], edges: v.edges || [] } as GraphView;
       } catch {
         out[k] = { nodes: [], edges: [] } as GraphView;
       }
