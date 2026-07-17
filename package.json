@@ -1,0 +1,9 @@
+{
+  "name": "sovereign-knowledge-compiler-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sovereign Knowledge Compiler Explorer — root package for Vercel framework detection. The Next.js app lives in apps/explorer.",
+  "dependencies": {
+    "next": "14.2.33"
+  }
+}
