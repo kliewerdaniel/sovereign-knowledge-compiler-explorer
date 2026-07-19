@@ -35,3 +35,7 @@
 
 - [Kubernetes Knowledge Compiler](https://k8s-docs-compiler.vercel.app/llms.txt) — 8,198-node K8s knowledge graph
 - [ChatGPT Compile](https://chatgpt-compile.vercel.app/llms.txt) — 2,489-conversation personal corpus
+
+## Built with
+
+This site follows the compile-time-AI pattern packaged as the [Discoverable Knowledge SDK](https://github.com/kliewerdaniel/discoverable-knowledge-sdk) — compile any dataset into a static, agent-discoverable knowledge site.
