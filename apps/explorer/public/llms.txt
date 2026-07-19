@@ -1,0 +1,37 @@
+# Sovereign Knowledge Compiler Explorer
+
+> A compiled, versioned knowledge graph of the Sovereign AI methodology and
+> concept corpus, built from source documents at **compile time**. Every fact
+> is traceable to its source. No runtime LLM is involved in serving this site —
+> it is a static, queryable knowledge resource. The entire site is
+> server-rendered: every concept has its own static URL and is readable by any
+> agent that can issue a plain HTTP GET, with no JavaScript required.
+
+## How to use this resource
+
+- The full structured concept corpus is `concept-store.json` (concepts + typed
+  edges + contracts). Fetch it and filter by `id` / `kind`.
+- Every concept is also a static HTML page: `/concept/<id>/`.
+- The `graph-views` (prerequisite / concept / decision / ontology) are static
+  node/edge tables, also reachable as crawler-friendly HTML.
+- `sitemap.xml` enumerates every static page; `robots.txt` allows all crawlers.
+
+## Machine-readable resources
+
+- [concept-store.json](https://skce-explorer.vercel.app/concept-store.json) — full concept graph (JSON)
+- [sitemap.xml](https://skce-explorer.vercel.app/sitemap.xml) — every static page
+- [robots.txt](https://skce-explorer.vercel.app/robots.txt) — crawler policy (allow all)
+
+## Pages (all pre-rendered, JS-free to read)
+
+- [/](https://skce-explorer.vercel.app/) — Home — stats + view index
+- [/concept/<id>](https://skce-explorer.vercel.app/concept/) — every concept, fully expanded
+- [/graph](https://skce-explorer.vercel.app/graph) — Concept Graph — static node/edge table + interactive canvas
+- [/paths](https://skce-explorer.vercel.app/paths) — learning paths (prerequisite chains)
+- [/search](https://skce-explorer.vercel.app/search) — full concept index + live box
+- [/about](https://skce-explorer.vercel.app/about) — methodology
+
+## Related compiled-knowledge sites (same author, same compile-time-AI approach)
+
+- [Kubernetes Knowledge Compiler](https://k8s-docs-compiler.vercel.app/llms.txt) — 8,198-node K8s knowledge graph
+- [ChatGPT Compile](https://chatgpt-compile.vercel.app/llms.txt) — 2,489-conversation personal corpus

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skce-explorer.vercel.app/sitemap.xml
