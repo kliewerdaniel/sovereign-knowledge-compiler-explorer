@@ -1,62 +1,42 @@
-"use client";
-
-import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { getSearchIndex, getConceptStore } from "../../lib/curriculum";
+import { getConceptStore } from "../../lib/curriculum.server";
+import SearchClient from "./SearchClient";
 
-export default function SearchClient() {
-  const [q, setQ] = useState("");
-  const [index, setIndex] = useState<{ inverted: Record<string, string[]>; titles: Record<string, string> } | null>(null);
-  const [store, setStore] = useState<Record<string, any>>({});
+export const metadata = {
+  title: "Search — SKC Explorer",
+  description:
+    "Search the compiled concept corpus. A static index of every concept is rendered server-side; the live box is a progressive enhancement.",
+};
 
-  useEffect(() => {
-    getSearchIndex().then(setIndex);
-    getConceptStore().then(setStore);
-  }, []);
-
-  const results = useMemo(() => {
-    if (!index || !q.trim()) return [];
-    const term = q.toLowerCase().trim();
-    const scored = new Map<string, number>();
-    for (const [tok, ids] of Object.entries(index.inverted)) {
-      if (tok.includes(term) || term.includes(tok)) {
-        for (const id of ids) scored.set(id, (scored.get(id) || 0) + 1);
-      }
-    }
-    // also match by title prefix
-    for (const [id, title] of Object.entries(index.titles)) {
-      if (title.toLowerCase().includes(term)) scored.set(id, (scored.get(id) || 0) + 2);
-    }
-    return [...scored.entries()].sort((a, b) => b[1] - a[1]).slice(0, 30);
-  }, [q, index]);
+export default async function SearchPage() {
+  const store = await getConceptStore();
+  const concepts = Object.values(store).sort((a: any, b: any) =>
+    (a.title || "").localeCompare(b.title || "")
+  );
 
   return (
     <div>
       <h1>Search</h1>
       <p className="why">
-        A pre-built inverted index (compiled, not a live embedding search). Type
-        a term to find concepts.
+        A pre-built inverted index (compiled, not a live embedding search). The live
+        search box below requires JavaScript; the full concept index is rendered
+        server-side and is fully crawlable without JS.
       </p>
-      <input
-        className="search-box"
-        placeholder="e.g. embeddings, crdt, prerequisite…"
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-      />
-      <div className="results">
-        {results.map(([id, score]) => {
-          const c = store[id];
-          if (!c) return null;
-          return (
-            <div className="result" key={id}>
-              <Link href={`/concept/${id}/`}>{c.title}</Link>{" "}
-              <span className="kind">{c.kind}</span>
-              <div className="why">{c.contract.what_is_it?.slice(0, 140)}…</div>
-            </div>
-          );
-        })}
-        {q && results.length === 0 && <p className="why">No matches.</p>}
-      </div>
+
+      <SearchClient />
+
+      <h2>All concepts ({concepts.length})</h2>
+      <ul className="idx">
+        {concepts.map((c: any) => (
+          <li key={c.id}>
+            <Link href={`/concept/${c.id}/`}>{c.title}</Link>{" "}
+            <span className="kind">{c.kind}</span>
+            {c.contract?.what_is_it ? (
+              <span className="why"> — {c.contract.what_is_it.slice(0, 120)}…</span>
+            ) : null}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

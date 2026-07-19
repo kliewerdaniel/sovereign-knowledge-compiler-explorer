@@ -17,7 +17,18 @@ export function getConceptStore(): Promise<Record<string, Concept>> {
 }
 
 export function getConceptViews(): Promise<Record<string, GraphView>> {
-  return Promise.resolve({} as Record<string, GraphView>);
+  const keys = ["prerequisite-graph", "concept-graph", "decision-graph", "ontology-graph"];
+  return Promise.all(
+    keys.map((k) =>
+      loadJson<any>(`graph-views/${k}.json`)
+        .then((v) => [k, v] as const)
+        .catch(() => null)
+    )
+  ).then((pairs) => {
+    const out: Record<string, GraphView> = {};
+    for (const p of pairs) if (p) out[p[0]] = p[1];
+    return out;
+  });
 }
 
 export function getLearningPaths(): Promise<Record<string, LearningPath>> {
